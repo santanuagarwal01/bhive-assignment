@@ -7,7 +7,6 @@ class DynamicLinks {
   final dynamicLink = FirebaseDynamicLinks.instance;
 
   handleDynamicLink(BuildContext context) async {
-    print("trying to link");
     await dynamicLink.getInitialLink();
     dynamicLink.onLink.listen((dynamicLinkData) {
       handleSuccessLinking(dynamicLinkData, context);
@@ -38,7 +37,6 @@ class DynamicLinks {
 
   void handleSuccessLinking(
       PendingDynamicLinkData dynamicLinkData, BuildContext context) {
-    print("Success link !!");
     final Uri? deepLink = dynamicLinkData.link;
 
     if (deepLink != null) {
@@ -46,7 +44,6 @@ class DynamicLinks {
       if (isRefer) {
         var code = deepLink.queryParameters['code'];
         if (code != null) {
-          print("Code received: $code");
           GeneratedRoute.navigateTo(
             MyRoutes.signupRoute,
             args: code,

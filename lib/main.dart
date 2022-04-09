@@ -16,7 +16,6 @@ Future main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -31,15 +30,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => const SignUpPage(),
-        //   MyRoutes.loginRoute: (context) => const LoginPage(),
-        //   MyRoutes.homeRoute: (context) => const HomePage(),
-        //   MyRoutes.referRoute: (context) => const ReferPage(),
-        //   MyRoutes.dashboardRoute: (context) => const DashboardPage(),
-        //   MyRoutes.signupRoute: (context) => const SignUpPage(),
-        // },
         navigatorKey: GeneratedRoute.navigatorKey,
         initialRoute: MyRoutes.signupRoute,
         onGenerateRoute: GeneratedRoute.onGenerate,
@@ -47,23 +37,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// class MainPage extends StatelessWidget {
-//   const MainPage({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: StreamBuilder<User?>(
-//         stream: FirebaseAuth.instance.authStateChanges(),
-//         builder: (context, snapshot) {
-//           if (snapshot.hasData) {
-//             return HomePage();
-//           } else {
-//             return LoginPage();
-//           }
-//         },
-//       ),
-//     );
-//   }
-// }

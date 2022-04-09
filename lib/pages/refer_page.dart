@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../services/home_view_provider.dart';
 
 class ReferPage extends StatelessWidget {
   const ReferPage({Key? key}) : super(key: key);
-
-  void _onShare() async {
-    print("function");
-    try {
-      await Share.shareWithResult(
-          'Hey, have you tried BHIVE.fund?\nI\'ve been investing with them and thought that you\'d love it too!\n\nBHIVE.fund is one of India\'s largest and fastest growing investment platforms.\n\nInvesting with them is fast and easy.\nClick on the link to start investing.\n\n ***link***',
-          subject: 'Did you try BHIVE yet?');
-    } catch (e) {
-      print(e.toString());
-    }
-  }
 
   @override
   Widget build(BuildContext context) {

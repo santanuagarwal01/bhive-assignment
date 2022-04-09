@@ -96,43 +96,42 @@ class DashboardPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  children: const [
-                    Expanded(
-                      child: Text(
-                        'Name',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+              Row(
+                children: const [
+                  Expanded(
+                    child: Text(
+                      'Name',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                    Expanded(
-                      child: Text(
-                        'Reward',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Reward',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                    Expanded(
-                      child: Text(
-                        'Investment',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Investment',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const Divider(
                 thickness: 2.0,
                 color: Colors.black,
               ),
-              Container(
-                  color: Colors.grey[200],
+              SizedBox(
                   height: 150,
                   child: StreamBuilder<QuerySnapshot>(
                     stream: users,
@@ -154,19 +153,27 @@ class DashboardPage extends StatelessWidget {
                           if (data.docs[index]['referral'].toString() == uid) {
                             return Column(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 12),
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                          child: Text(
-                                              '${data.docs[index]['name']}')),
-                                      const Expanded(child: Text('\t 10000')),
-                                      const Expanded(
-                                          child: Text('\t\tRBF-Myntra')),
-                                    ],
-                                  ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        '${data.docs[index]['name']}',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    const Expanded(
+                                      child: Text(
+                                        '\t 10000',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    const Expanded(
+                                      child: Text(
+                                        '\t\tRBF-Myntra',
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 const Divider(
                                     thickness: 2.0, color: Colors.black),

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:bhive_assignment/services/dynamic_link.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,19 +12,9 @@ class HomeViewProvider extends ChangeNotifier {
     deepLinkApi.handleDynamicLink(context);
   }
 
-  var referralCodeGenerator = Random();
-
-  void getReferralCode() {
-    var id = referralCodeGenerator.nextInt(92143543) + 09451234356;
-    var randomCode = "Ref-${id.toString().substring(0, 8)}";
-    referralCode = randomCode;
-  }
-
   void onShare() async {
     final String? uid = FirebaseAuth.instance.currentUser?.uid;
-    print(uid);
     String referralLink = await deepLinkApi.createReferralLink(uid!);
-    print(referralLink);
     try {
       await Share.shareWithResult(
           'Hey, have you tried BHIVE.fund?\nI\'ve been investing with them and thought that you\'d love it too!\n\nBHIVE.fund is one of India\'s largest and fastest growing investment platforms.\n\nInvesting with them is fast and easy.\nClick on the link to start investing.\n\n$referralLink',
