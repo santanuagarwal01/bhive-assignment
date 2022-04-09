@@ -74,6 +74,7 @@ class DashboardPage extends StatelessWidget {
                 thickness: 2.0,
                 color: Colors.black,
               ),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -94,36 +95,45 @@ class DashboardPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text(
-                    'Name',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Row(
+                  children: const [
+                    Expanded(
+                      child: Text(
+                        'Name',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Reward Status',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        'Reward',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Investment Status',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        'Investment',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const Divider(
                 thickness: 2.0,
                 color: Colors.black,
               ),
               Container(
-                  height: 200,
+                  color: Colors.grey[200],
+                  height: 150,
                   child: StreamBuilder<QuerySnapshot>(
                     stream: users,
                     builder: (BuildContext context,
@@ -144,14 +154,19 @@ class DashboardPage extends StatelessWidget {
                           if (data.docs[index]['referral'].toString() == uid) {
                             return Column(
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text('${data.docs[index]['name']}'),
-                                    const Text('\t 10000'),
-                                    const Text('\t\tRBF-Myntra'),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Text(
+                                              '${data.docs[index]['name']}')),
+                                      const Expanded(child: Text('\t 10000')),
+                                      const Expanded(
+                                          child: Text('\t\tRBF-Myntra')),
+                                    ],
+                                  ),
                                 ),
                                 const Divider(
                                     thickness: 2.0, color: Colors.black),
@@ -173,6 +188,7 @@ class DashboardPage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
+                        decoration: TextDecoration.underline,
                       ),
                     ),
                     const SizedBox(height: 10),
