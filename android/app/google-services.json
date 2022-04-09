@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "780077071849",
+    "project_id": "bhive-test",
+    "storage_bucket": "bhive-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780077071849:android:616469cc54a632d45c9f78",
+        "android_client_info": {
+          "package_name": "com.example.santanu.bhive_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780077071849-ovq6quvn5ao7atctu7mkirvfcopve4ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKDiqFz6ON-JBxlv17l8i_nW2gRTh0CWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780077071849-ovq6quvn5ao7atctu7mkirvfcopve4ei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
